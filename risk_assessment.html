@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Risk Assessment</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Data Driven Security Risk Assessment</h2>
+
+    <h2>Risk Assessment</h2>
+
+    <form method="POST">
+
+        <label>Vulnerability Name:</label><br>
+
+        <select name="vulnerability" id="vulnerability" onchange="fillDetails()">
+
+            <option value="">-- Select Vulnerability --</option>
+
+            <option value="SQL Injection">SQL Injection</option>
+
+            <option value="Cross Site Scripting (XSS)">Cross Site Scripting (XSS)</option>
+
+            <option value="Weak Password">Weak Password</option>
+
+            <option value="Malware">Malware</option>
+
+            <option value="Phishing">Phishing</option>
+
+        </select>
+
+        <br><br>
+
+        <label>Risk Type:</label><br>
+
+        <input type="text" id="risk_type" name="risk_type" readonly>
+
+        <br><br>
+
+        <label>Severity:</label><br>
+
+        <input type="text" id="severity" name="severity" readonly>
+
+        <br><br>
+
+        <label>Description:</label><br>
+
+        <input type="text" id="description" name="description" readonly>
+
+        <br><br>
+
+        <button type="submit">Submit Risk</button>
+
+    </form>
+
+</div>
+
+<script>
+
+function fillDetails(){
+
+    var vulnerability = document.getElementById("vulnerability").value;
+
+    if(vulnerability=="SQL Injection"){
+
+        document.getElementById("risk_type").value="Database Attack";
+
+        document.getElementById("severity").value="High";
+
+        document.getElementById("description").value="SQL Injection allows attackers to access or modify database data.";
+
+    }
+
+    else if(vulnerability=="Cross Site Scripting (XSS)"){
+
+        document.getElementById("risk_type").value="Web Application Attack";
+
+        document.getElementById("severity").value="High";
+
+        document.getElementById("description").value="XSS allows attackers to inject malicious scripts into web pages.";
+
+    }
+
+    else if(vulnerability=="Weak Password"){
+
+        document.getElementById("risk_type").value="Authentication Risk";
+
+        document.getElementById("severity").value="Medium";
+
+        document.getElementById("description").value="Weak passwords can be guessed easily.";
+
+    }
+
+    else if(vulnerability=="Malware"){
+
+        document.getElementById("risk_type").value="System Security Risk";
+
+        document.getElementById("severity").value="High";
+
+        document.getElementById("description").value="Malware can damage or steal system data.";
+
+    }
+
+    else if(vulnerability=="Phishing"){
+
+        document.getElementById("risk_type").value="Social Engineering";
+
+        document.getElementById("severity").value="High";
+
+        document.getElementById("description").value="Phishing tricks users into revealing sensitive information.";
+
+    }
+
+    else{
+
+        document.getElementById("risk_type").value="";
+
+        document.getElementById("severity").value="";
+
+        document.getElementById("description").value="";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

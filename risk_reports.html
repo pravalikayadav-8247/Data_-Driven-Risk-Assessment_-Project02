@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Risk Reports</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Data Driven Security Risk Assessment</h2>
+
+    <h2>Risk Reports</h2>
+
+    <table border="1" width="100%">
+
+        <tr>
+            <th>Vulnerability</th>
+            <th>Risk Type</th>
+            <th>Severity</th>
+            <th>Description</th>
+        </tr>
+
+        {% for risk in risks %}
+        <tr>
+            <td>{{ risk[1] }}</td>
+            <td>{{ risk[2] }}</td>
+            <td>{{ risk[3] }}</td>
+            <td>{{ risk[4] }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>

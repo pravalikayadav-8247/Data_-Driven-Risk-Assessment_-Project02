@@ -1,0 +1,30 @@
+<!DOCTYPE html>  <html>  
+<head>  
+    <title>Dashboard</title>  
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">  
+</head>  <body>  <div class="container">  <h2>Data Driven Security Risk Assessment</h2>  
+
+<h3>Dashboard</h3>  
+
+<p>Welcome to Risk Management System</p>  
+
+<br>  
+
+<a href="{{ url_for('risk_assessment') }}">  
+    <button type="button">Start Risk Assessment</button>  
+</a>  
+
+<br><br>  
+
+<a href="{{ url_for('risk_reports') }}">  
+    <button type="button">View Risk Reports</button>  
+</a>  
+
+<br><br>  
+
+<a href="{{ url_for('logout') }}">  
+    <button type="button">Logout</button>  
+</a>
+
+</div>  </body>  
+</html>.  
